@@ -18,3 +18,16 @@ def binary_search(sorted_list, item):
 	if found:
 		return True
 	return False
+
+def binary_search_recursive(sorted_list, item):
+	if len(sorted_list) == 0:
+		return False
+	else:
+		midpoint = len(sorted_list) // 2
+		if sorted_list[midpoint] == item:
+			return True
+		else:
+			if item < sorted_list[midpoint]:
+				return binary_search_recursive(sorted_list[:midpoint], item)
+			else:
+				return binary_search_recursive(sorted_list[midpoint+1:], item)
