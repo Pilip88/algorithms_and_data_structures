@@ -2,6 +2,7 @@ import unittest
 
 from linear_search import linear_search, linear_search_2
 from binary_search import binary_search, binary_search_recursive
+from jump_search import jump_search
 
 class SearchTests(unittest.TestCase):
 
@@ -45,6 +46,15 @@ class SearchTests(unittest.TestCase):
 		self.assertFalse(binary_search_recursive(self.test_list_sorted, 6))
 		self.assertFalse(binary_search_recursive(self.test_list_sorted, 1000))
 		self.assertFalse(binary_search_recursive(self.test_list_sorted, 1111))
+
+	def test_jump_search(self):
+		self.assertEqual(jump_search(self.test_list_sorted, 1), 0)
+		self.assertEqual(jump_search(self.test_list_sorted, 3), 1)
+		self.assertEqual(jump_search(self.test_list_sorted, 222), 10)
+		self.assertEqual(jump_search(self.test_list_sorted, 4123), 14)
+		self.assertEqual(jump_search(self.test_list_sorted, 6), -1)
+		self.assertEqual(jump_search(self.test_list_sorted, 1000), -1)
+		self.assertEqual(jump_search(self.test_list_sorted, 1111), -1)
 
 if __name__ == "__main__":
 	unittest.main()
