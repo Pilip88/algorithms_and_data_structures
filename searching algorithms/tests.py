@@ -10,24 +10,20 @@ class SearchTests(unittest.TestCase):
 	test_list_sorted = [1, 3, 4, 5, 13, 23, 33, 56, 66, 100, 222, 341, 442, 1245, 4123]
 
 	def test_linear_search(self):
-		self.assertEqual(linear_search(self.test_list, 3), 0)
-		self.assertEqual(linear_search(self.test_list, 33), 3)
-		self.assertEqual(linear_search(self.test_list, 1245), 7)
-		self.assertEqual(linear_search(self.test_list, 442), 12)
-		self.assertEqual(linear_search(self.test_list, 100), 15)
-		self.assertEqual(linear_search(self.test_list, 111), -1)
-		self.assertEqual(linear_search(self.test_list, 333), -1)
-		self.assertEqual(linear_search(self.test_list, 1111), -1)
+		value_list = [3, 33, 1245, 442, 100, 111, 333, 1111]
+		result_list = [0, 3, 7, 12, 15, -1, -1, -1]
+		i = 0
+		while i < len(value_list):
+			self.assertEqual(linear_search(self.test_list, value_list[i]), result_list[i])
+			i += 1
 
 	def test_linear_search_2(self):
-		self.assertEqual(linear_search_2(self.test_list, 3), 0)
-		self.assertEqual(linear_search_2(self.test_list, 33), 3)
-		self.assertEqual(linear_search_2(self.test_list, 1245), 7)
-		self.assertEqual(linear_search_2(self.test_list, 442), 12)
-		self.assertEqual(linear_search_2(self.test_list, 100), 15)
-		self.assertEqual(linear_search_2(self.test_list, 111), -1)
-		self.assertEqual(linear_search_2(self.test_list, 333), -1)
-		self.assertEqual(linear_search_2(self.test_list, 1111), -1)
+		value_list = [3, 33, 1245, 442, 100, 111, 333, 1111]
+		result_list = [0, 3, 7, 12, 15, -1, -1, -1]
+		i = 0
+		while i < len(value_list):
+			self.assertEqual(linear_search_2(self.test_list, value_list[i]), result_list[i])
+			i += 1
 
 	def test_binary_search(self):
 		self.assertTrue(binary_search(self.test_list_sorted, 1))
