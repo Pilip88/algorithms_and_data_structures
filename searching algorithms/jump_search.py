@@ -1,6 +1,8 @@
 import math
 from linear_search import linear_search
 
+# Time complexity is O(sqrt(n))
+
 def jump_search(a_list, item):
 	len_of_list = len(a_list)
 	jump_size = int(math.sqrt(len_of_list))

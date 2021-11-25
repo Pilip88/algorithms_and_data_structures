@@ -1,4 +1,5 @@
 # Problem: Given a sorted array arr[] of n elements, write a function to search a given element x in arr[].
+# Time complexity is O(log n)
 
 def binary_search(sorted_list, item):
 	first_index = 0
