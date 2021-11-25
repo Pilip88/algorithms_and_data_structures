@@ -1,6 +1,7 @@
 import unittest
 
 from selection_sort import selection_sort
+from bubble_sort import bubble_sort
 
 class SortingTests(unittest.TestCase):
 	test_list_1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
@@ -11,6 +12,11 @@ class SortingTests(unittest.TestCase):
 		self.assertEqual(selection_sort(self.test_list_1), self.test_list_1)
 		self.assertEqual(selection_sort(self.test_list_2), self.test_list_1)
 		self.assertEqual(selection_sort(self.test_list_3), self.test_list_1)
+
+	def test_bubble_sort(self):
+		self.assertEqual(bubble_sort(self.test_list_1), self.test_list_1)
+		self.assertEqual(bubble_sort(self.test_list_2), self.test_list_1)
+		self.assertEqual(bubble_sort(self.test_list_3), self.test_list_1)
 
 
 if __name__ == "__main__":
